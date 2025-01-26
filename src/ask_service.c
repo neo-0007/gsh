@@ -31,7 +31,7 @@ void ask_gemini(const char *question) {
     CURL *curl;
     CURLcode res;
 
-    const char *api_key = "AIzaSyBAyjOydxfdqrSGFruVRXoRNG5pbh1ZKhY";
+    const char *api_key = "your_gemini_api_key";
     const char *url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent";
 
     char json_payload[1024];
