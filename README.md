@@ -1,11 +1,17 @@
 # GSH Project
 
-`gsh` is a command-line tool written in C that allows users to interact with the **Google Gemini API** by sending questions and receiving responses. It leverages `libcurl` for HTTP requests and `cJSON` for parsing JSON responses. The tool is designed to run on **Linux** systems and is not currently supported on Windows or macOS.
+Command-line tool written completly in C that allows users to interact with the **Google Gemini API** by sending questions and receiving responses. Never leave your terminal during debbuging, The tool is designed to run on **Linux** systems and is not currently supported on Windows or macOS.
 
 ## Features
 - **Gemini API Interaction**: Send questions to the Google Gemini API and receive responses.
 - **JSON Parsing**: Parse and display the API response using the `cJSON` library.
 - **Command-Line Interface**: Simple and intuitive CLI for interacting with the tool.
+
+## Todos
+- [ ] **Chat with Gemini API**: Enable multi-turn conversations.
+- [ ] **Static Linking of Dependencies**: Ensure portability and ease of deployment.
+- [ ] **Cross-Compile for Windows**: Add support for Windows systems.
+- [ ] **Cross-Compile for macOS**: Add support for macOS systems.
 
 ## Getting Started
 
