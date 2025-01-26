@@ -1,4 +1,4 @@
-# GSH Project
+# `gsh`
 
 Command-line tool written completly in C that allows users to interact with the **Google Gemini API** by sending questions and receiving responses. Never leave your terminal during debbuging, The tool is designed to run on **Linux** systems and is not currently supported on Windows or macOS.
 
