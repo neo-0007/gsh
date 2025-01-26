@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "ask_service.h" // Include the ask_service header
+#include "ask_service.h" 
 
-// Function prototypes
+
 void print_help();
 void print_version();
 
@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
             return 0;
         } else if (strcmp(argv[i], "-s") == 0) {
             if (i + 1 < argc) {
-                // Pass the question to the Gemini API
                 ask_gemini(argv[i + 1]);
                 return 0;
             } else {
@@ -49,7 +48,7 @@ int main(int argc, char *argv[])
 
 void print_help()
 {
-    // ASCII art for "GSH"
+
     printf("\n");
     printf("_|_|_|    _|_|_|  _|    _|  \n");
     printf("_|        _|        _|    _|  \n");
