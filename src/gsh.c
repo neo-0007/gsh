@@ -26,7 +26,14 @@ int main(int argc, char *argv[])
             return 0;
         } else if (strcmp(argv[i], "-s") == 0) {
             if (i + 1 < argc) {
-                ask_gemini(argv[i + 1]);
+                char question[1024] = {0};
+                for (int j = i + 1; j < argc; j++) {
+                    strcat(question, argv[j]);
+                    if (j < argc - 1) {
+                        strcat(question, " ");
+                    }
+                }
+                ask_gemini(question);
                 return 0;
             } else {
                 printf("Error: No question provided after -s.\n");
