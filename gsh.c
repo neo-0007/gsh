@@ -1,8 +1,10 @@
+// main.c
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h> 
+#include <string.h>
+#include "ask_service.h" // Include the ask_service header
 
-
+// Function prototypes
 void print_help();
 void print_version();
 
@@ -18,8 +20,19 @@ int main(int argc, char *argv[])
     for (int i = 1; i < argc; i++) {
         if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
             print_help();
+            return 0;
         } else if (strcmp(argv[i], "-v") == 0 || strcmp(argv[i], "--version") == 0) {
             print_version();
+            return 0;
+        } else if (strcmp(argv[i], "-s") == 0) {
+            if (i + 1 < argc) {
+                // Pass the question to the Gemini API
+                ask_gemini(argv[i + 1]);
+                return 0;
+            } else {
+                printf("Error: No question provided after -s.\n");
+                return 1;
+            }
         } else {
             printf("Unknown option: %s\n", argv[i]);
             invalid_options = 1;
@@ -36,12 +49,13 @@ int main(int argc, char *argv[])
 
 void print_help()
 {
+    // ASCII art for "GSH"
     printf("\n");
-    printf("_|_|_|    _|_|_|    _|    _|  \n");
+    printf("_|_|_|    _|_|_|  _|    _|  \n");
     printf("_|        _|        _|    _|  \n");
     printf("_|  _|_|    _|_|    _|_|_|_|  \n");
     printf("_|    _|        _|  _|    _|  \n");
-    printf(" _|_|_|    _|_|_|   _|    _|  \n");
+    printf("  _|_|_|  _|_|_|    _|    _|  \n");
     printf("                              \n");
     printf("                              \n");
 
@@ -49,9 +63,10 @@ void print_help()
     printf("Options:\n");
     printf("  -h, --help     Display this help and exit\n");
     printf("  -v, --version  Output version information and exit\n");
+    printf("  -s <question>  Send a question to Gemini and print the response\n");
 }
 
 void print_version()
 {
-    printf("Version 1.0.0\n");
+    printf("GSH Version 1.0\n");
 }
